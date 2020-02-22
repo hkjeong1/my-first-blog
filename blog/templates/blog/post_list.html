@@ -1,13 +1,15 @@
+{% load static %}
 <html>
     <head>
+        <title>HK's blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <title>HK's blog</title>
+        <link rel="stylesheet" href=" {% static 'css/blog.css' %}">
     </head>
     <body>
         <div>
-            <h1><a href="">WORKLIST</a></h1>
-            <p>-----------------------------------------------------------------------------------------------------</p>
+            <h1><a href=""><b>WORKLIST</b></a></h1>
+            <hr>
         </div>
 
         {% for post in posts %}
@@ -25,7 +27,8 @@
                 <p><b>published: {{ post.published_date }}</b></p>
                 <h2><a href="">{{ post.title }}</a></h2>
                 <p>{{ post.text|linebreaksbr }}</p>
-                <p>-----------------------------------------------------------------------------------------------------</p>
+                <hr>
+                <!-- <p>-----------------------------------------------------------------------------------------------------</p> -->
             </div>
         {% endfor %}
     </body>
